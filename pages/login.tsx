@@ -34,7 +34,7 @@ const Login = () => {
             placeholder='Password'
         />
         </Form.Group>
-        <Button variant='primary' type='submit'></Button>
+        <Button variant='primary' type='submit'>Login</Button>
       </Form>
     </div>
   );
