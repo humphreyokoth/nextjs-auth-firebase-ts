@@ -23,6 +23,18 @@ const Login = () => {
             placeholder='Enter email'
         />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            onChange={(e: any) => setData({ ...data, password: e.target.value })}
+        
+            value={data.password}
+            required
+            type='password'
+            placeholder='Password'
+        />
+        </Form.Group>
+        <Button variant='primary' type='submit'></Button>
       </Form>
     </div>
   );
