@@ -1,13 +1,13 @@
 import { createContext, ReactInstance, useContext, useEffect, useState } from 'react'
 import { onAuthStateChanged, createUserWithEmailAndPassword, signOut } from 'firebase/auth'
 import { auth } from './../config/firabse';
-const AuthContext = createContext({})
+const AuthContext = createContext<any>({})
 export const useAuth = () => useContext(AuthContext)
 export const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
 
     const [user, setUser] = useState<any>(null)
     const [loading, setLoading] = useState(true)
-    console.log(user )
+    console.log(user)
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {

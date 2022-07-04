@@ -2,18 +2,24 @@ import React, { useState } from 'react'
 import { Button, Form } from 'react-bootstrap';
 import { useAuth } from '../context/AuthContext';
 const Signup = () => {
-    const {user} = useAuth()
+    const { user, signup } = useAuth()
     console.log(user)
     const [data, setData] = useState({ email: '', password: '' });
 
-    const handleSignup = (e: any) => {
+    const handleSignup = async (e: any) => {
         e.preventDefault()
+        try {
+
+            await signup(data.email, data.password)
+        } catch (err) {
+            console.log(err)
+        }
         console.log(data)
 
     }
     return (
         <div style={{
-            width: '40',
+            width: '40%',
             margin: 'auto'
         }}>
             <h1 className='text-center my-3'>Signup</h1>
