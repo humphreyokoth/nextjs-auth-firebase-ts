@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Button, Form } from 'react-bootstrap';
-
+import { useAuth } from '../context/AuthContext';
 const Signup = () => {
+    const {user} = useAuth()
+    console.log(user)
     const [data, setData] = useState({ email: '', password: '' });
 
     const handleSignup = (e: any) => {
